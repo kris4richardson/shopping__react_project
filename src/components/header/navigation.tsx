@@ -13,6 +13,7 @@ import ListItemText from "@mui/material/ListItemText";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import MenuIcon from "@mui/icons-material/Menu";
+import CardMedia from "@mui/material/CardMedia";
 
 interface Props {
   /**
@@ -22,7 +23,7 @@ interface Props {
   win?: () => Window;
 }
 export default function PersonalNavigation(props: Props) {
-  const navItems = ["Catalogue", "Fashion", "Favourite", "Lifestyle", "Sign up"];
+  const navItems = ["Catalogue", "Fashion", "Favourite", "Lifestyle"];
   const { win } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const drawerWidth = 240;
@@ -50,8 +51,8 @@ export default function PersonalNavigation(props: Props) {
   return (
     <>
       <CssBaseline />
-      <AppBar component="nav">
-        <Toolbar>
+      <AppBar style={{ background: '#fff' }} component="nav">
+        <Toolbar sx={{}}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -60,20 +61,41 @@ export default function PersonalNavigation(props: Props) {
             sx={{ mr: 2, display: { sm: "none" } }}
           >
             <MenuIcon />
+            <Box
+        component="img"
+        sx={{
+          height: 233,
+          width: 350,
+          maxHeight: { xs: 233, md: 167 },
+          maxWidth: { xs: 350, md: 250 },
+        }}
+        alt="Logo"
+        src='img/logo.png'
+      />
           </IconButton>
+          <CardMedia
+        component="img"
+        sx={{
+          width: "3vh",
+
+        }}
+        image ="/img/logo.png"
+        />
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+            sx={{ color: "#242323", flexGrow: 1, display: { xs: "none", sm: "block" } }}
           >
             FASHION
           </Typography>
+         
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: "#fff" }}>
+              <Button key={item} sx={{ color: "#242323" }}>
                 {item}
               </Button>
             ))}
+              <Button sx={{ background: "#242323"}}variant="contained">Sign up</Button>
           </Box>
         </Toolbar>
       </AppBar>

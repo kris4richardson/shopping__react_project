@@ -18,7 +18,7 @@ export default function NewArrivals() {
   return (
     <Box component="main" sx={{ p: 3 }}>
     <Toolbar />
-    <Grid sx={{ flexGrow: 1, m: 3 }} container spacing={4}>
+    <Grid sx={{ flexGrow: 1, m: 3 }} container >
       <Grid item xs={10}>
         <Grid container justifyContent="center" spacing={spacing}>
           {[0, 1, 2].map((value) => (
@@ -26,7 +26,7 @@ export default function NewArrivals() {
               <Paper
                 sx={{
                   height: 140,
-                  width: 100,
+                  width: 60,
                   backgroundColor: (theme) =>
                     theme.palette.mode === "dark" ? "#1A2027" : "#fff",
                     

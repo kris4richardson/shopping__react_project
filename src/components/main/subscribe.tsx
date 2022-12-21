@@ -7,8 +7,7 @@ export default function SubscribeContainer() {
   return (
     <React.Fragment>
       <CssBaseline />
-      <Container maxWidth="xl">
-        <Box sx={{ bgcolor: '#cfe8fc', height: '30vh' }} />
+      <Container sx={{ background: "#ebd96b", height: "40vh"}} maxWidth="xl">
         <Box
   component="form"
   sx={{

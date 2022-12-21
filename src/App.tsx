@@ -1,14 +1,15 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import PersonalNavigation from "./components/header/navigation";
-import Banner from "./components/header/banner";
-import BrandsContainer from "./components/main/brands"
-import NewArrivals from "./components/main/new-arrivals";
-import VoucherContainer from "./components/main/voucher"
-import YoungsFav from "./components/main/youngs_fav";
-import AppsContainer from "./components/main/apps"
-import SubscribeContainer from "./components/main/subscribe"
-import Footer from "./components/footer/footer"
+import PersonalNavigation from "./components/header/Navigation";
+import Banner from "./components/header/Banner";
+import BrandsContainer from "./components/main/Brands"
+import NewArrivals from "./components/main/NewArrivals";
+import VoucherContainer from "./components/main/Voucher"
+import YoungsFav from "./components/main/YoungsFav";
+import AppsContainer from "./components/main/Apps"
+import SubscribeContainer from "./components/main/Subscribe"
+import Footer from "./components/footer/Footer"
+import Stack from "@mui/material/Stack";
 
 
 interface Props {
@@ -24,8 +25,10 @@ export default function App(props: Props) {
 
   
   return (
-    <Box sx={{ display: 'flex'}} flexDirection="column" alignItems={"center"} justifyContent="center">
-    <PersonalNavigation />
+    <>
+    <Stack direction={{ xs: 'column' }}
+    spacing={{ xs: 1, sm: 2, md: 4 }}>
+    <PersonalNavigation/>
     <Banner/>
     <BrandsContainer/>
     <NewArrivals/>
@@ -33,8 +36,10 @@ export default function App(props: Props) {
     <YoungsFav/>
     <AppsContainer/>
     <SubscribeContainer/>
+    
+    </Stack>
     <Footer/>
-    </Box>
+    </>
     );
 }
   
