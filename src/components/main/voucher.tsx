@@ -32,14 +32,12 @@ export default function VoucherContainer() {
   const buttonSectionView = () => {
     return (
       <StyledVoucher>
-        <Stack
+        {/* <Stack
           direction="row"
-          justifyContent="center"
-          divider={<Box sx={{ mx: { xs: 1, sm: 2.5 } }} />}
-          sx={{ typography: 'h2', bottom: 0, position: 'absolute', marginBottom: 32 }}
-        >
+          justifyContent="bottom"
+        > */}
           <ShopNowButton  variant="contained">Shop now</ShopNowButton>
-        </Stack>
+        {/* </Stack> */}
       </StyledVoucher>
     )
   }
@@ -47,7 +45,7 @@ export default function VoucherContainer() {
     <StyledBox>
       <Container
         sx={{
-          // marginTop: 8,
+          marginTop: 8,
           height: 1,
           backgroundSize: 'contain',
           backgroundRepeat: 'no-repeat',

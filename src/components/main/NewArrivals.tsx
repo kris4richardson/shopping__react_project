@@ -1,9 +1,7 @@
 import * as React from "react";
 import {
   Box,
-  Toolbar,
   Grid,
-  Paper,
   Container,
   CardMedia,
   Button,
@@ -14,15 +12,6 @@ import {
 } from "@mui/material";
 
 export default function NewArrivals() {
-  const [spacing, setSpacing] = React.useState(2);
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSpacing(Number((event.target as HTMLInputElement).value));
-  };
-
-  const jsx = `
-  <Grid container spacing={${spacing}}>
-  `;
 
   return (
     <Box

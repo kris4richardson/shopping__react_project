@@ -44,7 +44,7 @@ export default function Banner() {
             component="img"
             alt="element"
             src="/img/yellow-element.png"
-            sx={{ height: 40 }}
+            sx={{ height: 20 }}
           />
           <ShopNowButton  variant="contained">Shop now</ShopNowButton>
         </Stack>
