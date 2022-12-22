@@ -1,43 +1,28 @@
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
-import Card from '@mui/material/Card';
-import CardHeader from '@mui/material/CardHeader';
-import CardMedia from '@mui/material/CardMedia';
-import CardContent from '@mui/material/CardContent';
-import CardActions from '@mui/material/CardActions';
-import Collapse from '@mui/material/Collapse';
-import Avatar from '@mui/material/Avatar';
-import IconButton, { IconButtonProps } from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import { purple, red } from '@mui/material/colors';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import ShareIcon from '@mui/icons-material/Share';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
-import Button, { ButtonProps } from '@mui/material/Button';
+import { Box, Button, Container, Grid, Stack } from '@mui/material';
+import { ButtonProps } from '@mui/material/Button';
 
-interface ExpandMoreProps extends IconButtonProps {
-  expand: boolean;
-}
 
-const ExpandMore = styled((props: ExpandMoreProps) => {
-  const { expand, ...other } = props;
-  return <IconButton {...other} />;
-})(({ theme, expand }) => ({
-  transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
-  marginLeft: 'auto',
-  transition: theme.transitions.create('transform', {
-    duration: theme.transitions.duration.shortest,
-  }),
+ const StyledRoot = styled('div')(() => ({
+  top: 0,
+  left: 0,
+  width: '100%',
+  height: '100vh',
 }));
 
+ const StyledHeaderMain = styled('div')(() => ({
+  margin: 'auto',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'bottom',
+  padding: 8,
+  height: '70%',
+}));
+
+
 export default function Banner() {
-  const [expanded, setExpanded] = React.useState(false);
-
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
-
   const ShopNowButton = styled(Button)<ButtonProps>(({ theme }) => ({
     color: "#fff",
     backgroundColor: "#000000",
@@ -45,29 +30,47 @@ export default function Banner() {
       backgroundColor: "#000000",
     },
   }));
-
+  
+  const buttonSectionView = () => {
+    return (
+      <StyledHeaderMain>
+        <Stack
+          direction="row"
+          justifyContent="center"
+          divider={<Box sx={{ mx: { xs: 1, sm: 2.5 } }} />}
+          sx={{ typography: 'h2', bottom: 0, position: 'absolute', marginBottom: 32 }}
+        >
+          <Box
+            component="img"
+            alt="element"
+            src="/img/yellow-element.png"
+            sx={{ height: 40 }}
+          />
+          <ShopNowButton  variant="contained">Shop now</ShopNowButton>
+        </Stack>
+      </StyledHeaderMain>
+    )
+  }
   return (
-    <Card sx={{}}>
-     
-      <CardMedia
-        component="img"
-        width="100%"
-        image="/img/hero-banner.png"
-        alt="Paella dish"
-      />
-      <CardContent>
-      <CardActions disableSpacing>
-      <CardMedia
-        component="img"
+    <StyledRoot>
+      <Container
         sx={{
-          width: "15vh",
-
+          marginTop: 8,
+          height: 1,
+          backgroundSize: 'contain',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center',
+          backgroundImage: 'url(/img/hero-banner.png)',
+          borderRadius: 16,
         }}
-        image ="/img/yellow-element.png"
-        />
-        <ShopNowButton  variant="contained">Shop now</ShopNowButton>
-      </CardActions>
-      </CardContent>
-    </Card>
+        maxWidth={'xl'}
+      >
+        <Grid container spacing={10} sx={{ height: 1 }}>
+          <Grid item xs={12} md={6} sx={{ height: 1 }}>
+            {buttonSectionView()}
+          </Grid>
+        </Grid>
+      </Container>
+    </StyledRoot>
   );
 }

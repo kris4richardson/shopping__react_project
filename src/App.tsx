@@ -1,5 +1,4 @@
 import * as React from "react";
-import Box from "@mui/material/Box";
 import PersonalNavigation from "./components/header/Navigation";
 import Banner from "./components/header/Banner";
 import BrandsContainer from "./components/main/Brands"

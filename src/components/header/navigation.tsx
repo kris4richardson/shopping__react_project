@@ -37,10 +37,10 @@ export default function PersonalNavigation(props: Props) {
       </Typography>
       <Divider />
       <List>
-        {navItems.map((item) => (
+        {navItems.map((item:string) => (
           <ListItem key={item} disablePadding>
             <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
+              <ListItemText primary={item} onClick={() => window.location.href = "/catalogue"}/>
             </ListItemButton>
           </ListItem>
         ))}
@@ -60,23 +60,12 @@ export default function PersonalNavigation(props: Props) {
             onClick={handleDrawerToggle}
             sx={{ mr: 2, display: { sm: "none" } }}
           >
-            <MenuIcon />
-            <Box
-        component="img"
-        sx={{
-          height: 233,
-          width: 350,
-          maxHeight: { xs: 233, md: 167 },
-          maxWidth: { xs: 350, md: 250 },
-        }}
-        alt="Logo"
-        src='img/logo.png'
-      />
+            <MenuIcon /> 
           </IconButton>
           <CardMedia
         component="img"
         sx={{
-          width: "3vh",
+          width: "2.5vh",
 
         }}
         image ="/img/logo.png"
@@ -84,7 +73,7 @@ export default function PersonalNavigation(props: Props) {
           <Typography
             variant="h6"
             component="div"
-            sx={{ color: "#242323", flexGrow: 1, display: { xs: "none", sm: "block" } }}
+            sx={{ fontFamily:"Roboto",fontWeight:"900",color: "#242323", flexGrow: 1, marginLeft:1, display: { xs: "none", sm: "block" } }}
           >
             FASHION
           </Typography>
