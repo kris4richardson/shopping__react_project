@@ -34,16 +34,16 @@ export default function Footer() {
               </Box>
               <Stack direction="row" spacing={1}>
                 <Link href="/">
-                  <Box component="img" src="/img/facebook.png"></Box>
+                  <Box component="img" src="/img/facebook.png" height={"6vh"}></Box>
                 </Link>
                 <Link href="/">
-                  <Box component="img" src="/img/instagram.png"></Box>
+                  <Box component="img" src="/img/instagram.png" height={"6vh"}></Box>
                 </Link>
                 <Link href="/">
-                  <Box component="img" src="/img/twitter.png"></Box>
+                  <Box component="img" src="/img/twitter.png" height={"6vh"}></Box>
                 </Link>
                 <Link href="/">
-                  <Box component="img" src="/img/linkedin.png"></Box>
+                  <Box component="img" src="/img/linkedin.png" height={"6vh"}></Box>
                 </Link>
               </Stack>
               </Stack>
