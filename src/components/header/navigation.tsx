@@ -14,6 +14,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import MenuIcon from "@mui/icons-material/Menu";
 import CardMedia from "@mui/material/CardMedia";
+import buttonSectionView from "../button";
 
 interface Props {
   /**
@@ -84,7 +85,7 @@ export default function PersonalNavigation(props: Props) {
                 {item}
               </Button>
             ))}
-              <Button sx={{ background: "#242323"}}variant="contained">Sign up</Button>
+              {buttonSectionView("sign up")}
           </Box>
         </Toolbar>
       </AppBar>

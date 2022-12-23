@@ -20,8 +20,8 @@ export default function NewArrivals() {
         width: "100%",
       }}
     >
-      <Container maxWidth={"xl"}>
-        <Grid container spacing={2} sx={{ height: 1 }}>
+      <Container maxWidth={"lg"}>
+        <Grid container spacing={3} sx={{ height: 1 }}>
           <Grid item xs={4} md={3} lg={4} sx={{ height: 1 }}>
             <Card sx={{ maxWidth: 345 }}>
               <CardMedia

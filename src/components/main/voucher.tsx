@@ -1,65 +1,45 @@
-import * as React from 'react';
-import { styled } from '@mui/material/styles';
-import { Box, Button, Container, Grid, Stack } from '@mui/material';
-import { ButtonProps } from '@mui/material/Button';
+import * as React from "react";
+import { styled } from "@mui/material/styles";
+import { Container } from "@mui/material";
+import buttonSectionView from "../button";
 
-const StyledBox = styled('div')(() => ({
+const StyledBox = styled("div")(() => ({
   top: 0,
   left: 0,
-  width: '100%',
-  height: '100vh',
+  width: "100%",
+  height: "100vh",
 }));
 
- const StyledVoucher = styled('div')(() => ({
-  margin: 'auto',
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  justifyContent: 'bottom',
+const StyledVoucher = styled("div")(() => ({
+  margin: "auto",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "bottom",
   padding: 8,
-  height: '70%',
+  height: "70%",
 }));
 
-export default function VoucherContainer() {
-  const ShopNowButton = styled(Button)<ButtonProps>(({ theme }) => ({
-    color: "#fff",
-    backgroundColor: "#000000",
-    '&:hover': {
-      backgroundColor: "#000000",
-    },
-  }));
-  
-  const buttonSectionView = () => {
-    return (
-      <StyledVoucher>
-        {/* <Stack
-          direction="row"
-          justifyContent="bottom"
-        > */}
-          <ShopNowButton  variant="contained">Shop now</ShopNowButton>
-        {/* </Stack> */}
-      </StyledVoucher>
-    )
-  }
+const VoucherContainer = () => {
   return (
     <StyledBox>
-      <Container
-        sx={{
-          marginTop: 8,
-          height: 1,
-          backgroundSize: 'contain',
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center',
-          backgroundImage: 'url(/img/banner.png)',
-        }}
-        maxWidth={'xl'}
-      >
-        <Grid container spacing={10} sx={{ height: 1 }}>
-          <Grid item xs={12} md={6} sx={{ height: 1 }}>
-            {buttonSectionView()}
-          </Grid>
-        </Grid>
-      </Container>
+      <StyledVoucher>
+        <Container
+          sx={{
+            marginTop: 8,
+            height: 1,
+            backgroundSize: "contain",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+            backgroundImage: "url(/img/banner.png)",
+          }}
+          maxWidth={"xl"}
+        >
+          {buttonSectionView("sign up")}
+        </Container>
+      </StyledVoucher>
     </StyledBox>
   );
-}
+};
+
+export default VoucherContainer;

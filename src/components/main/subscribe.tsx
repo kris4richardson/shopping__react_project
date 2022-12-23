@@ -1,5 +1,4 @@
 import * as React from "react";
-import CssBaseline from "@mui/material/CssBaseline";
 import { Box, Container } from "@mui/system";
 import TextField from "@mui/material/TextField";
 import { styled } from "@mui/material/styles";
@@ -10,6 +9,7 @@ const StyledSub = styled("div")(() => ({
   width: "100%",
   height: "60vh",
 }));
+
 
 export default function SubscribeContainer() {
   return (

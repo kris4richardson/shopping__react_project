@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
-import { Box, Button, Container, Grid, Stack } from '@mui/material';
-import { ButtonProps } from '@mui/material/Button';
+import  {Container, Grid} from '@mui/material';
+import buttonSectionView from '../button';
 
 
  const StyledRoot = styled('div')(() => ({
@@ -23,36 +23,10 @@ import { ButtonProps } from '@mui/material/Button';
 
 
 export default function Banner() {
-  const ShopNowButton = styled(Button)<ButtonProps>(({ theme }) => ({
-    color: "#fff",
-    backgroundColor: "#000000",
-    '&:hover': {
-      backgroundColor: "#000000",
-    },
-  }));
   
-  const buttonSectionView = () => {
-    return (
-      <StyledHeaderMain>
-        <Stack
-          direction="row"
-          justifyContent="center"
-          divider={<Box sx={{ mx: { xs: 1, sm: 2.5 } }} />}
-          sx={{ typography: 'h2', bottom: 0, position: 'absolute', marginBottom: 32 }}
-        >
-          <Box
-            component="img"
-            alt="element"
-            src="/img/yellow-element.png"
-            sx={{ height: 20 }}
-          />
-          <ShopNowButton  variant="contained">Shop now</ShopNowButton>
-        </Stack>
-      </StyledHeaderMain>
-    )
-  }
   return (
     <StyledRoot>
+      <StyledHeaderMain>
       <Container
         sx={{
           marginTop: 8,
@@ -65,12 +39,14 @@ export default function Banner() {
         }}
         maxWidth={'xl'}
       >
-        <Grid container spacing={10} sx={{ height: 1 }}>
-          <Grid item xs={12} md={6} sx={{ height: 1 }}>
-            {buttonSectionView()}
-          </Grid>
-        </Grid>
+        {/* <Grid container spacing={10} sx={{ height: 1 }}>
+          <Grid item xs={12} md={6} sx={{ height: 1 }}> */}
+            {buttonSectionView("sign up")}
+            
+          {/* </Grid>
+        </Grid> */}
       </Container>
+      </StyledHeaderMain>
     </StyledRoot>
   );
 }
