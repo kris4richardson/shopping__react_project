@@ -8,7 +8,10 @@ const StyledApps = styled('div')(() => ({
   top: 0,
   left: 0,
   width: '100%',
-  height: '100vh',
+  height: '90vh',
+  display: "flex",
+  alignItems:"center",
+  justifyContent:"center"
 }));
 
 export default function AppsContainer() {
@@ -17,7 +20,11 @@ export default function AppsContainer() {
       <Container  sx={{ height: 1, backgroundSize: 'contain',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center', 
-          backgroundImage: 'url(/img/vouchers.png)'}} maxWidth={'lg'}>
+          backgroundImage: 'url(/img/vouchers.png)', m:2, display: "flex",
+          alignItems:"center",
+          justifyContent:"start",
+          }} maxWidth={'lg'} >
+            <Box sx={{ mt: "12rem", ml: "" }}>
           <Stack
           direction="row"
           justifyContent="start"
@@ -39,6 +46,7 @@ export default function AppsContainer() {
           />
           </Link>
         </Stack>
+        </Box>
       </Container>
       </StyledApps>
   );

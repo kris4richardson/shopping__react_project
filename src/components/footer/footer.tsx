@@ -8,7 +8,7 @@ import styled from "@emotion/styled";
 
 const footer = {
   background: "#000000",
-  height: "30vh",
+  height: 200,
 };
 
 const StyledFooter = styled('div')(() => ({

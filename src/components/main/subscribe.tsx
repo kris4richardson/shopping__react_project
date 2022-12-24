@@ -1,15 +1,44 @@
 import * as React from "react";
-import { Box, Container } from "@mui/system";
-import TextField from "@mui/material/TextField";
+import { Container } from "@mui/system";
+import TextField, { TextFieldProps } from "@mui/material/TextField";
 import { styled } from "@mui/material/styles";
+import { InputAdornment, Button, alpha } from "@mui/material";
+import buttonSectionView from "../Button";
 
 const StyledSub = styled("div")(() => ({
   top: 0,
   left: 0,
   width: "100%",
-  height: "60vh",
+  height: 350,
 }));
 
+type Props = TextFieldProps & {
+  width?: number;
+};
+
+const CustomTextField = styled(TextField, {
+  shouldForwardProp: (prop) => prop !== "width",
+})<Props>(({ width, theme }) => ({
+  "& fieldset": {
+    display: "none",
+  },
+  "& .MuiOutlinedInput-root": {
+    width: "55vh",
+    backgroundColor: "#fff",
+
+    transition: theme.transitions.create(["box-shadow", "width"], {
+      duration: theme.transitions.duration.shorter,
+    }),
+    "&.Mui-focused": {
+      boxShadow: 20,
+      ...(width && {
+        [theme.breakpoints.up("sm")]: {
+          width: width + 60,
+        },
+      }),
+    },
+  },
+}));
 
 export default function SubscribeContainer() {
   return (
@@ -21,24 +50,23 @@ export default function SubscribeContainer() {
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           backgroundImage: "url(/img/subscribe-banner.png)",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "end",
         }}
         maxWidth={"xl"}
       >
-        <Box
-          component="form"
-          sx={{
-            "& > :not(style)": { m: 1, width: "25ch" },
+        <CustomTextField
+          fullWidth
+          placeholder="Enter your email"
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position="end">
+                {buttonSectionView("send")}
+              </InputAdornment>
+            ),
+            sx: { pr: 0.5 },
           }}
-          noValidate
-          autoComplete="off"
-        >
-          <TextField id="filled-basic" label="Filled" variant="filled" />
-        </Box>
+        />
       </Container>
+      //{" "}
     </StyledSub>
   );
 }

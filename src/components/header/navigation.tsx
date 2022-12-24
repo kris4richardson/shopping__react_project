@@ -4,7 +4,6 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Drawer from "@mui/material/Drawer";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
-import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
@@ -14,7 +13,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import MenuIcon from "@mui/icons-material/Menu";
 import CardMedia from "@mui/material/CardMedia";
-import buttonSectionView from "../button";
+import buttonSectionView from "../Button";
 
 interface Props {
   /**
@@ -33,15 +32,14 @@ export default function PersonalNavigation(props: Props) {
   };
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
-      </Typography>
-      <Divider />
       <List>
-        {navItems.map((item:string) => (
+        {navItems.map((item: string) => (
           <ListItem key={item} disablePadding>
             <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} onClick={() => window.location.href = "/catalogue"}/>
+              <ListItemText
+                primary={item}
+                onClick={() => (window.location.href = "/catalogue")}
+              />
             </ListItemButton>
           </ListItem>
         ))}
@@ -52,40 +50,46 @@ export default function PersonalNavigation(props: Props) {
   return (
     <>
       <CssBaseline />
-      <AppBar style={{ background: '#fff' }} component="nav">
-        <Toolbar sx={{}}>
+      <AppBar style={{ background: "#fff" }} component="nav">
+        <Toolbar>
           <IconButton
             color="inherit"
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
+            sx={{display: { sm: "none" } }}
           >
-            <MenuIcon /> 
+            <MenuIcon />
           </IconButton>
           <CardMedia
-        component="img"
-        sx={{
-          width: "2.5vh",
-
-        }}
-        image ="/img/logo.png"
-        />
+            component="img"
+            sx={{
+              width: "2.7vh",
+            }}
+            image="/img/logo.png"
+          />
           <Typography
             variant="h6"
             component="div"
-            sx={{ fontFamily:"Roboto",fontWeight:"900",color: "#242323", flexGrow: 1, marginLeft:1, display: { xs: "none", sm: "block" } }}
+            sx={{
+              fontFamily: "Roboto",
+              fontWeight: "900",
+              color: "#242323",
+              flexGrow: 1,
+              marginLeft:1,
+              display: { xs: "none", sm: "block" },
+            }}
           >
             FASHION
           </Typography>
-         
+
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
               <Button key={item} sx={{ color: "#242323" }}>
                 {item}
               </Button>
             ))}
-              {buttonSectionView("sign up")}
+            {buttonSectionView("sign up")}
           </Box>
         </Toolbar>
       </AppBar>

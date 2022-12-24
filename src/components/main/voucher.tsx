@@ -1,7 +1,7 @@
 import * as React from "react";
 import { styled } from "@mui/material/styles";
 import { Container } from "@mui/material";
-import buttonSectionView from "../button";
+import buttonSectionView from "../Button";
 
 const StyledBox = styled("div")(() => ({
   top: 0,
@@ -28,7 +28,7 @@ const VoucherContainer = () => {
           sx={{
             marginTop: 8,
             height: 1,
-            backgroundSize: "contain",
+            backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
             backgroundImage: "url(/img/banner.png)",
@@ -37,7 +37,7 @@ const VoucherContainer = () => {
         >
           {buttonSectionView("sign up")}
         </Container>
-      </StyledVoucher>
+        </StyledVoucher>
     </StyledBox>
   );
 };
