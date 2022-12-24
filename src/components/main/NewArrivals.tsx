@@ -10,6 +10,7 @@ import {
   CardContent,
   Typography,
 } from "@mui/material";
+import EastIcon from '@mui/icons-material/East';
 
 export default function NewArrivals() {
 
@@ -23,7 +24,7 @@ export default function NewArrivals() {
       <Container maxWidth={"lg"}>
         <Grid container spacing={3} sx={{ height: 1 }}>
           <Grid item xs={4} md={3} lg={4} sx={{ height: 1 }}>
-            <Card sx={{ maxWidth: 345 }}>
+            <Card elevation={0} sx={{ maxWidth: 345 }}>
               <CardMedia
                 component="img"
                 alt="hoodies"
@@ -39,13 +40,12 @@ export default function NewArrivals() {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button size="small">Share</Button>
-                <Button size="small">Learn More</Button>
+              <Button size="medium" sx={{color:"text.secondary"}}><EastIcon/></Button>
               </CardActions>
             </Card>
           </Grid>
           <Grid item xs={4} md={3} lg={4} sx={{ height: 1 }}>
-            <Card sx={{ maxWidth: 345 }}>
+            <Card elevation={0} sx={{ maxWidth: 345 }}>
               <CardMedia
                 component="img"
                 alt="coats"
@@ -61,13 +61,12 @@ export default function NewArrivals() {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button size="small">Share</Button>
-                <Button size="small">Learn More</Button>
+              <Button size="medium" sx={{color:"text.secondary"}}><EastIcon/></Button>
               </CardActions>
             </Card>
           </Grid>
           <Grid item xs={4} md={3} lg={4} sx={{ height: 1 }}>
-            <Card sx={{ maxWidth: 345 }}>
+            <Card elevation={0} sx={{ maxWidth: 345 }}>
               <CardMedia
                 component="img"
                 alt="tees"
@@ -83,8 +82,7 @@ export default function NewArrivals() {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button size="small">Share</Button>
-                <Button size="small">Learn More</Button>
+              <Button size="medium" sx={{color:"text.secondary"}}><EastIcon/></Button>
               </CardActions>
             </Card>
           </Grid>

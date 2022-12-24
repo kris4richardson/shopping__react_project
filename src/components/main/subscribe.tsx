@@ -1,20 +1,32 @@
 import * as React from "react";
-import { Container } from "@mui/system";
 import TextField, { TextFieldProps } from "@mui/material/TextField";
 import { styled } from "@mui/material/styles";
-import { InputAdornment, Button, alpha } from "@mui/material";
+import { Box, Grid, InputAdornment, Paper } from "@mui/material";
 import buttonSectionView from "../Button";
-
-const StyledSub = styled("div")(() => ({
-  top: 0,
-  left: 0,
-  width: "100%",
-  height: 350,
-}));
 
 type Props = TextFieldProps & {
   width?: number;
 };
+
+const StyledSub = styled("div")(() => ({
+  width: "100%",
+  height: 350,
+  position: "relative",
+  backgroundSize: "cover",
+  backgroundRepeat: "no-repeat",
+  backgroundPosition: "center",
+  backgroundImage: "url(/img/subscribe-banner.png)",
+  display: "flex",
+  alignItems: "flex-end",
+}));
+
+const Item = styled('div')(({ theme }) => ({
+  backgroundColor: "transparent",
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: "center",
+  color: theme.palette.text.secondary,
+}));
 
 const CustomTextField = styled(TextField, {
   shouldForwardProp: (prop) => prop !== "width",
@@ -23,7 +35,7 @@ const CustomTextField = styled(TextField, {
     display: "none",
   },
   "& .MuiOutlinedInput-root": {
-    width: "55vh",
+    width: "64vh",
     backgroundColor: "#fff",
 
     transition: theme.transitions.create(["box-shadow", "width"], {
@@ -43,30 +55,32 @@ const CustomTextField = styled(TextField, {
 export default function SubscribeContainer() {
   return (
     <StyledSub>
-      <Container
-        sx={{
-          height: 1,
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
-          backgroundImage: "url(/img/subscribe-banner.png)",
-        }}
-        maxWidth={"xl"}
-      >
-        <CustomTextField
-          fullWidth
-          placeholder="Enter your email"
-          InputProps={{
-            endAdornment: (
-              <InputAdornment position="end">
-                {buttonSectionView("send")}
-              </InputAdornment>
-            ),
-            sx: { pr: 0.5 },
-          }}
-        />
-      </Container>
-      //{" "}
+      <Box sx={{ flexGrow: 1, mb: 9 }}>
+        <Grid container spacing={1}>
+          <Grid item sm={2} md={2} lg={4}>
+            <Item></Item>
+          </Grid>
+          <Grid item sm={8} md={8} lg={4}>
+            <Item>
+              <CustomTextField
+                fullWidth
+                placeholder="Enter your email"
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="start">
+                      {buttonSectionView("send")}
+                    </InputAdornment>
+                  ),
+                  sx: { pr: 0.5 },
+                }}
+              />
+            </Item>
+          </Grid>
+          <Grid item sm={2} md={2} lg={4}>
+            <Item></Item>
+          </Grid>
+        </Grid>
+      </Box>
     </StyledSub>
   );
 }
