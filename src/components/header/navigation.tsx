@@ -13,7 +13,8 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import MenuIcon from "@mui/icons-material/Menu";
 import CardMedia from "@mui/material/CardMedia";
-import buttonSectionView from "../Button";
+import { Black, Medium } from "../FontStyle";
+import { buttonSectionView__sm } from "../Button";
 
 interface Props {
   /**
@@ -31,11 +32,14 @@ export default function PersonalNavigation(props: Props) {
     setMobileOpen((prevState) => !prevState);
   };
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+    <Box
+      onClick={handleDrawerToggle}
+      sx={{ textAlign: "center" }}
+    >
       <List>
         {navItems.map((item: string) => (
           <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
+            <ListItemButton style={Medium} sx={{ textAlign: "center" }}>
               <ListItemText
                 primary={item}
                 onClick={() => (window.location.href = "/catalogue")}
@@ -57,7 +61,7 @@ export default function PersonalNavigation(props: Props) {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{display: { sm: "none" } }}
+            sx={{ display: { sm: "none" } }}
           >
             <MenuIcon />
           </IconButton>
@@ -71,12 +75,11 @@ export default function PersonalNavigation(props: Props) {
           <Typography
             variant="h6"
             component="div"
+            style={Black}
             sx={{
-              fontFamily: "Roboto",
-              fontWeight: "900",
-              color: "#242323",
+              color: "#000000",
               flexGrow: 1,
-              marginLeft:1,
+              marginLeft: 1,
               display: { xs: "none", sm: "block" },
             }}
           >
@@ -85,11 +88,18 @@ export default function PersonalNavigation(props: Props) {
 
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: "#242323" }}>
+              <Button
+                key={item}
+                style={Medium}
+                sx={{
+                  color: "#242323",
+                  letterSpacing: "0.01em",
+                }}
+              >
                 {item}
               </Button>
             ))}
-            {buttonSectionView("sign up")}
+            {buttonSectionView__sm("sign up")}
           </Box>
         </Toolbar>
       </AppBar>

@@ -9,11 +9,11 @@ import {
   CardMedia,
   Container,
   Typography,
-  Link,
   styled,
   IconButton,
 } from "@mui/material";
 import EastIcon from "@mui/icons-material/East";
+import { Medium } from "../FontStyle";
 
 const Item = styled("div")(({ theme }) => ({
   backgroundColor: "transparent",
@@ -50,6 +50,11 @@ export default function YoungsFav() {
                           gutterBottom
                           variant="subtitle1"
                           component="div"
+                          style={Medium}
+                          color="#000000"
+                          fontSize="3.2"
+                          lineHeight="156%"
+                          letterSpacing="-0.04em"
                         >
                           Trending on instagram
                         </Typography>
@@ -58,7 +63,14 @@ export default function YoungsFav() {
 
                     <Grid item sm={12} md={12} lg={12}>
                       <Item sx={{ textAlign: "left", padding: 0 }}>
-                        <Typography variant="body2" color="text.secondary">
+                        <Typography
+                          variant="body2"
+                          style={Medium}
+                          color="#7F7F7F"
+                          fontSize="2.4"
+                          lineHeight="200%"
+                          letterSpacing="-0.04em"
+                        >
                           Explore Now!
                         </Typography>
                       </Item>
@@ -98,6 +110,11 @@ export default function YoungsFav() {
                           gutterBottom
                           variant="subtitle1"
                           component="div"
+                          style={Medium}
+                          color="#000000"
+                          fontSize="3.2"
+                          lineHeight="156%"
+                          letterSpacing="-0.04em"
                         >
                           All under $40
                         </Typography>
@@ -106,7 +123,14 @@ export default function YoungsFav() {
 
                     <Grid item sm={12} md={12} lg={12}>
                       <Item sx={{ textAlign: "left", padding: 0 }}>
-                        <Typography variant="body2" color="text.secondary">
+                        <Typography
+                          variant="body2"
+                          style={Medium}
+                          color="#7F7F7F"
+                          fontSize="2.4"
+                          lineHeight="200%"
+                          letterSpacing="-0.04em"
+                        >
                           Explore Now!
                         </Typography>
                       </Item>

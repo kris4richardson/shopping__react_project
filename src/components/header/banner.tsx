@@ -1,13 +1,13 @@
 import * as React from "react";
 import { styled } from "@mui/material/styles";
-import { Container, Grid } from "@mui/material";
-import buttonSectionView from "../Button";
+import { Box, Container, Grid, Link, Paper } from "@mui/material";
+import {buttonSectionView__lg} from "../Button";
 
 const StyledRoot = styled("div")(() => ({
   top: 0,
   left: 0,
   width: "100%",
-  height: "100vh",
+  height: 480,
 }));
 
 const StyledHeaderMain = styled("div")(() => ({
@@ -20,25 +20,42 @@ const StyledHeaderMain = styled("div")(() => ({
   height: "100%",
 }));
 
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: "salmon",
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: "center",
+  color: theme.palette.text.secondary,
+}));
+
 export default function Banner() {
   return (
     <StyledRoot>
       <StyledHeaderMain>
         <Container
           sx={{
-            marginTop: 8,
+            marginTop: 4,
             height: 1,
             backgroundSize: "contain",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
             backgroundImage: "url(/img/hero-banner.png)",
-            borderRadius: 8,
+            borderRadius: 6,
           }}
           maxWidth={"xl"}
         >
-          {buttonSectionView("sign up")}
-
-         
+          <Grid container spacing={0} sx={{ mt: "20rem" }} maxWidth="lg">
+          <Grid item sm={4} md={4} lg={4}>
+            <Item>
+            {buttonSectionView__lg("Shop Now")}
+            </Item>
+          </Grid>
+          
+          <Grid item sm={8} md={8} lg={8}>
+            <Item></Item>
+          </Grid>
+        </Grid>
+          
         </Container>
       </StyledHeaderMain>
     </StyledRoot>

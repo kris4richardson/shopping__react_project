@@ -1,8 +1,9 @@
 import * as React from "react";
 import TextField, { TextFieldProps } from "@mui/material/TextField";
 import { styled } from "@mui/material/styles";
-import { Box, Grid, InputAdornment, Paper } from "@mui/material";
-import buttonSectionView from "../Button";
+import { Box, Grid, InputAdornment } from "@mui/material";
+import { buttonSectionView__lg, buttonSectionView__sm } from "../Button";
+import { Medium } from "../FontStyle";
 
 type Props = TextFieldProps & {
   width?: number;
@@ -20,7 +21,7 @@ const StyledSub = styled("div")(() => ({
   alignItems: "flex-end",
 }));
 
-const Item = styled('div')(({ theme }) => ({
+const Item = styled("div")(({ theme }) => ({
   backgroundColor: "transparent",
   ...theme.typography.body2,
   padding: theme.spacing(1),
@@ -68,7 +69,7 @@ export default function SubscribeContainer() {
                 InputProps={{
                   endAdornment: (
                     <InputAdornment position="start">
-                      {buttonSectionView("send")}
+                      {buttonSectionView__lg("send")}
                     </InputAdornment>
                   ),
                   sx: { pr: 0.5 },
