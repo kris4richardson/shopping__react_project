@@ -20,6 +20,11 @@ const router = createBrowserRouter([
     element: <App />,
     errorElement: <ErrorPage />,
   },
+  {
+    path: "/signup",
+    element:<p> this is sign up page </p>,
+    
+  },
 ]);
 
 root.render(

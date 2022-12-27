@@ -32,10 +32,7 @@ export default function PersonalNavigation(props: Props) {
     setMobileOpen((prevState) => !prevState);
   };
   const drawer = (
-    <Box
-      onClick={handleDrawerToggle}
-      sx={{ textAlign: "center" }}
-    >
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <List>
         {navItems.map((item: string) => (
           <ListItem key={item} disablePadding>
@@ -95,11 +92,12 @@ export default function PersonalNavigation(props: Props) {
                   color: "#242323",
                   letterSpacing: "0.01em",
                 }}
+                onClick={() => (window.location.href = "/signup")}
               >
                 {item}
               </Button>
             ))}
-            {buttonSectionView__sm("sign up")}
+            {buttonSectionView__sm("sign up", {color:"#fafafa"})}
           </Box>
         </Toolbar>
       </AppBar>

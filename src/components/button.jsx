@@ -2,7 +2,7 @@ import * as React from "react";
 import { styled } from "@mui/material/styles";
 import Button from "@mui/material/Button";
 
-const buttonSectionView__sm = (buttonText) => {
+const buttonSectionView__sm = (buttonText, sx) => {
   const ShopNowButton = styled(Button)({
     width:"",
     color: "#fff",
@@ -19,7 +19,7 @@ const buttonSectionView__sm = (buttonText) => {
   if (buttonText) {
     return (
       <>
-        <ShopNowButton variant="contained" size="medium">{buttonText}</ShopNowButton>
+        <ShopNowButton variant="contained" size="medium" sx={sx}>{buttonText}</ShopNowButton>
       </>
     );
   }

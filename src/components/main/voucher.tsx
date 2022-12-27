@@ -6,6 +6,8 @@ import { buttonSectionView__lg } from "../Button";
 const StyledBox = styled("div")(() => ({
   top: 0,
   left: 0,
+  margin:0,
+  padding:0,
   width: "100%",
   height: "auto",
   backgroundImage: "url(/img/banner.png)",
@@ -16,12 +18,12 @@ const StyledBox = styled("div")(() => ({
 }));
 
 const StyledVoucher = styled("div")(() => ({
-  margin: "auto",
+  margin: 0,
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
   justifyContent: "bottom",
-  padding: 8,
+ 
   maxWidth: "100%",
   height: "80vh",
 
